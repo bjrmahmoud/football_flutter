@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart'; // Import your HomePage widget
+import 'home_page.dart';
 
 class AboutUsPage extends StatefulWidget {
   const AboutUsPage({super.key});
@@ -16,22 +16,22 @@ class _AboutUsPageState extends State<AboutUsPage> {
     {
       'title': 'About Us',
       'description':
-          'Discover the amazing features of our app. Use the buttons to learn more!',
+      'Discover the amazing features of our app. Use the buttons to learn more!',
     },
     {
       'title': 'Productivity Boost',
       'description':
-          'Maximize your productivity with tools designed to streamline your workflow.',
+      'Maximize your productivity with tools designed to streamline your workflow.',
     },
     {
       'title': 'Intuitive Design',
       'description':
-          'Experience an easy-to-use interface that makes navigating a breeze.',
+      'Experience an easy-to-use interface that makes navigating a breeze.',
     },
     {
       'title': 'Seamless Integration',
       'description':
-          'Easily integrate with other tools and platforms to enhance your workflow.',
+      'Easily integrate with other tools and platforms to enhance your workflow.',
     },
   ];
 
@@ -56,29 +56,22 @@ class _AboutUsPageState extends State<AboutUsPage> {
         children: [
           // Background Image
           Image.asset(
-            'images/background2.jpg',
+            'assets/images/background2.jpg',
             fit: BoxFit.cover,
           ),
-          // Home Text Button
+          // Home Icon Button
           Positioned(
             top: 20,
             right: 20,
-            child: TextButton(
+            child: IconButton(
+              icon: const Icon(Icons.home, color: Colors.white, size: 40), // Bigger icon
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const HomePage()),
                 );
               },
-              child: const Text(
-                'Home',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  decoration: TextDecoration.underline,
-                  fontSize: 16,
-                ),
-              ),
+              tooltip: 'Go to Home', // Adds accessibility hint
             ),
           ),
           // Content

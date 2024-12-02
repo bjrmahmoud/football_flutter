@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'aboutus.dart';
 import 'login.dart';
+import 'Register.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,7 +14,7 @@ class HomePage extends StatelessWidget {
         children: [
           // Background Image
           Image.asset(
-            'images/background.jpg',
+            'assets/images/background.jpg',
             fit: BoxFit.cover,
           ),
           // Content overlay
@@ -65,7 +66,7 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const RegisterPage()),
+                          builder: (context) => const LoginPage()),
                     );
                   },
                   child: const Text(

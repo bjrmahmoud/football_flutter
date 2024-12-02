@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'register.dart'; // Import the RegisterPage
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +11,7 @@ class LoginPage extends StatelessWidget {
         children: [
           // Background Image
           Image.asset(
-            'assets/images/login_background.jpg', // Replace with your background image path
+            'assets/images/register_background.jpg', // Replace with your background image path
             fit: BoxFit.cover,
           ),
           // Content Overlay
@@ -27,7 +26,7 @@ class LoginPage extends StatelessWidget {
                     children: [
                       // App Title
                       const Text(
-                        'Login',
+                        'Register',
                         style: TextStyle(
                           fontSize: 36,
                           fontWeight: FontWeight.bold,
@@ -36,6 +35,19 @@ class LoginPage extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 30),
+                      // Name Field
+                      TextField(
+                        keyboardType: TextInputType.name,
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          hintText: 'Full Name',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
                       // Email Field
                       TextField(
                         keyboardType: TextInputType.emailAddress,
@@ -62,43 +74,52 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      // Login Button
+                      // Confirm Password Field
+                      TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          hintText: 'Confirm Password',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      // Register Button
                       ElevatedButton(
                         onPressed: () {
-                          // Handle login action
+                          // Handle registration action
                         },
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 15),
-                          backgroundColor: Colors.green, // Customize color
+                          backgroundColor: Colors.blue, // Customize color
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
                         child: const Text(
-                          'Login',
+                          'Register',
                           style: TextStyle(fontSize: 18, color: Colors.white),
                         ),
                       ),
                       const SizedBox(height: 20),
-                      // Register Section
+                      // Back to Login Section
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            "Don't have an account?",
+                            'Already have an account?',
                             style: TextStyle(color: Colors.white70),
                           ),
                           TextButton(
                             onPressed: () {
-                              // Navigate to Register Page
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const RegisterPage()),
-                              );
+                              // Navigate to Login Page
+                              Navigator.pop(context);
                             },
                             child: const Text(
-                              'Register',
+                              'Login',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
